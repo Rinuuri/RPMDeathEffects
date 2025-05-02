@@ -1,0 +1,10 @@
+name: RPMDeathEffects
+version: '1.0-SNAPSHOT'
+main: dev.rinuuri.rPMDeathEffects.RPMDeathEffects
+api-version: '1.20'
+authors: [ Rinuuri ]
+folia-supported: true
+description: Wens tranfoben nu de tyfus ;)
+permissions:
+  setkillef:
+    usage: "/setkillef <effect>"
