@@ -4,6 +4,8 @@ main: dev.rinuuri.rPMDeathEffects.RPMDeathEffects
 api-version: '1.20'
 authors: [ Rinuuri ]
 folia-supported: true
+depend:
+  - MythicMobs
 description: Wens tranfoben nu de tyfus ;)
 permissions:
   setkillef:
