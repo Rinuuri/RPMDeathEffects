@@ -7,6 +7,6 @@ folia-supported: true
 depend:
   - MythicMobs
 description: Wens tranfoben nu de tyfus ;)
-permissions:
+commands:
   setkillef:
     usage: "/setkillef <effect>"
