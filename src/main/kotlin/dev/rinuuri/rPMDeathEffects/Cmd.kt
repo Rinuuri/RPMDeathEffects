@@ -10,10 +10,10 @@ class Cmd : CommandExecutor {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
         if (args.isEmpty() || sender !is Player) return true
 
-        val effect = RPMDeathEffects.instance.config.getConfigurationSection(args[0]) ?: return true
+        val effect = RPMDeathEffects.instance.config.getConfigurationSection(args[0])
 
-        if (!sender.hasPermission(effect.getString("permission","*")!!)) return true
-        sender.persistentDataContainer.set(RPMDeathEffects.key, PersistentDataType.STRING, effect.name)
+        if (args[0] != "null" && (effect == null || !sender.hasPermission(effect.getString("permission","*")!!))) return true
+        sender.persistentDataContainer.set(RPMDeathEffects.key, PersistentDataType.STRING, args[0])
         return true
     }
 }

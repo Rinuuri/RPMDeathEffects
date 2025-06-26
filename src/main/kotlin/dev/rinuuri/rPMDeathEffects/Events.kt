@@ -12,8 +12,7 @@ import org.bukkit.persistence.PersistentDataType
 class Events : Listener {
     @EventHandler
     fun onDeath(event: PlayerDeathEvent){
-        val e = event.entity.lastDamageCause?.entity
-        if (e == null || e !is Player) return
+        val e = event.entity.killer ?: return
         val name = e.persistentDataContainer
             .get(RPMDeathEffects.key, PersistentDataType.STRING) ?: return
         val effect = RPMDeathEffects.instance.config.getConfigurationSection(name) ?: return
